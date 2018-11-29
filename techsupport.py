@@ -8,11 +8,13 @@ def welcome():
 def get_input():
     return input().lower()
 
-def get_output(word):
+def get_output(sentence):
     output = {'crashed':'Are the drivers up to date?', 'blue':'Ah, the blue screen of death. And then what happened?', 'hacked': 'You should consider installing anti-virus software.', 'bluetooth': 'Have you tried mouthwash?', 'windows': 'Ah, I think I see your problem. What version?', 'apple': 'You do mean the computer kind of apple don\'t you?', 'spam': 'You should see if your mail client can filter messages.', 'connection': 'Contact Telkom'}
     list_of_keys = list(output)
-    if word in list_of_keys:
-        return output[i]
+    sentence = sentence.split()
+    for i in sentence:
+        if i in list_of_keys:
+            return output[i]
     return 'Curious, tell me more.'
 
 def main():
@@ -27,3 +29,4 @@ def main():
     
 if __name__ == '__main__':
     main()
+
